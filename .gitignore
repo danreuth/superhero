@@ -1,0 +1,19 @@
+#################
+# Files
+#################
+*.class
+*.classpath
+*.project
+*.settings
+*.springBeans
+#################
+# Directories
+#################
+target/
+bin/
+#################
+# Intellij
+#################
+.idea/
+*.iml
+*.iws
