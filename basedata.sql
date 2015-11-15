@@ -6,6 +6,6 @@ INSERT INTO powertype (powertype) VALUES('Observation');
 
 
 -- Create Powers
-INSERT INTO power (description, name, powertype_id) VALUES('test desc 2', 'Test name 2', 1);
-INSERT INTO power (description, name, powertype_id) VALUES('test desc 5', 'Test name 5', 2);
-INSERT INTO power (description, name, powertype_id) VALUES('test desc 8', 'Test name 8', 3);
+INSERT INTO power (description, name, powertype_id) VALUES('desc1', 'Test name 2', 1);
+INSERT INTO power (description, name, powertype_id) VALUES('desc5', 'Test name 5', 2);
+INSERT INTO power (description, name, powertype_id) VALUES('desc8', 'Test name 8', 3);

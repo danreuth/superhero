@@ -1,6 +1,7 @@
 package com.catalyst.superhero.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -11,8 +12,10 @@ public class PowerType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
+    @NotNull
     String powerType;
-   
+
     public int getId() {
         return id;
     }

@@ -30,8 +30,8 @@ public class PowerController {
     }
 
     @RequestMapping(value = "/powers", method = RequestMethod.POST)
-    public Power createPower(@Validated @RequestBody Power power) {
-
+    public Power createPower(@RequestBody Power power) {
+        System.out.println("Running Create Controller");
         return powerService.createPower(power);
     }
 
