@@ -8,11 +8,7 @@ import javax.validation.constraints.Size;
  * Created by dReuther on 11/7/2015.
  */
 @Entity
-public class Power {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+public class Power extends BaseEntity {
 
     @NotNull
     @Size(min = 1, max = 255)
@@ -25,14 +21,6 @@ public class Power {
     @NotNull
     @Size(min = 1, max = 255)
     String description;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public PowerType getPowerType() {
         return powerType;
