@@ -1,7 +1,10 @@
 package com.catalyst.superhero.entities;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 /**
@@ -14,6 +17,9 @@ public class PowerType {
     int id;
 
     @NotNull
+    @Column(unique = true)
+    @Length(min = 1, max = 100)
+    @Pattern(regexp = "^[A-Z][a-z]*")
     String powerType;
 
     public int getId() {

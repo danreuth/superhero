@@ -45,11 +45,11 @@ public class PowerServiceImpl implements PowerService {
 
         PowerType pt = powerTypeDao.findPowerTypeById(power.getPowerType().getId());
         System.out.println(pt);
-        if(powerTypeDao.findPowerTypeById(power.getPowerType().getId()) != null) {
+      //  if(powerTypeDao.findPowerTypeById(power.getPowerType().getId()) != null) {
             return powerDao.updatePower(power);
-        } else {
-            throw new DataIntegrityViolationException("Test Message");
-        }
+      //  } else {
+      //      throw new DataIntegrityViolationException("Test Message");
+      //  }
 
     }
 }

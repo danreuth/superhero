@@ -6,6 +6,6 @@ INSERT INTO powertype (powertype) VALUES('Observation');
 
 
 -- Create Powers
-INSERT INTO power (description, name, powertype_id) VALUES('desc100', 'Test name 2', 1);
-INSERT INTO power (description, name, powertype_id) VALUES('desc500', 'Test name 5', 2);
-INSERT INTO power (description, name, powertype_id) VALUES('desc800', 'Test name 8', 3);
+INSERT INTO power (description, name, powertype_id) VALUES('Allows a hero to fly.', 'Flight', 1);
+INSERT INTO power (description, name, powertype_id) VALUES('Projects heat rays from the hero''s eyes', 'Heat Vision', 2);
+INSERT INTO power (description, name, powertype_id) VALUES('Hero''s skin is as tough as diamonds', 'Diamond Skin', 3);

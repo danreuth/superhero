@@ -32,7 +32,7 @@ public class PowerDaoHibernateTests {
     @Test
     public void testCreatePower() throws Exception {
         target.createPower(null);
-        verify(mockEm, times(1)).persist(null);
+        verify(mockEm, times(1)).merge(null);
     }
 
     @Test

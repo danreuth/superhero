@@ -30,8 +30,7 @@ public class PowerDaoHibernate implements PowerDao {
 
     public Power createPower(Power power) {
 
-        em.persist(power);
-        return power;
+        return em.merge(power);
     }
 
     public Power updatePower(Power power) {
