@@ -11,24 +11,14 @@ import java.util.List;
  * Created by dReuther on 11/7/2015.
  */
 @Entity
-public class PowerType {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+public class PowerType extends BaseEntity {
 
     @NotNull
     @Column(unique = true)
     @Length(min = 1, max = 100)
     @Pattern(regexp = "^[A-Z][a-z]*")
+
     String powerType;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getPowerType() {
         return powerType;
