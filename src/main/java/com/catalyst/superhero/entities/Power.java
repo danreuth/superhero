@@ -1,9 +1,11 @@
 package com.catalyst.superhero.entities;
 
 import com.catalyst.superhero.com.catalyst.superhero.constants.entities.EntityConstants;
+import com.catalyst.superhero.constants.regexes.RegExes;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 /**
@@ -13,7 +15,9 @@ import javax.validation.constraints.Size;
 public class Power extends BaseEntity {
 
     @NotNull
+    @Column(unique = true)
     @Size(min = EntityConstants.MIN_POWER_NAME_LENGTH, max = EntityConstants.MAX_POWER_NAME_LENGTH)
+    @Pattern(regexp = RegExes.POWER_NAME_REGEX)
     String name;
 
     @NotNull
@@ -21,7 +25,9 @@ public class Power extends BaseEntity {
     PowerType powerType;
 
     @NotNull
+    @Column(unique = true)
     @Size(min = EntityConstants.MIN_POWER_DESCRIPTION_LENGTH, max = EntityConstants.MAX_POWER_DESCRIPTION_LENGTH)
+    @Pattern(regexp = RegExes.POWER_DESCRIPTION_REGEX)
     String description;
 
     public PowerType getPowerType() {

@@ -17,6 +17,10 @@ public class ValidateStringsTests {
     public static final String STRING_LENGTH_10 = "abcdefghij";
     public static final String VALID_POWER_TYPE_STRING = "Movement";
     public static final String INVALID_POWER_TYPE_STRING = "movement";
+    public static final String VALID_POWER_DESCRIPTION_STRING = "This is a valid string.!?,";
+    public static final String INVALID_POWER_DESCRIPTION_STRING = "This is a valid string.!?,&&&&";
+    public static final String VALID_POWER_NAME_STRING = "Rocket Flight 10";
+    public static final String INVALID_POWER_NAME_STRING = "Rocket Flight 10*****";
 
     public static final int ZERO = 0;
     public static final int FIVE = 5;
@@ -30,6 +34,34 @@ public class ValidateStringsTests {
     @Before
     public void setup() {
         validateStrings = new ValidateStrings();
+    }
+
+    @Test
+    public void regexValidatorPowerNameHappyPath() {
+        assertTrue(validateStrings.regexValidator(VALID_POWER_NAME_STRING,
+                RegExes.POWER_NAME_REGEX));
+
+    }
+
+    @Test
+    public void regexValidatorPowerNameFailingTest() {
+        assertFalse(validateStrings.regexValidator(INVALID_POWER_NAME_STRING,
+                RegExes.POWER_NAME_REGEX));
+
+    }
+
+    @Test
+    public void regexValidatorPowerDescriptionHappyPath() {
+        assertTrue(validateStrings.regexValidator(VALID_POWER_DESCRIPTION_STRING,
+                RegExes.POWER_DESCRIPTION_REGEX));
+
+    }
+
+    @Test
+    public void regexValidatorPowerDescriptionFailingTest() {
+        assertFalse(validateStrings.regexValidator(INVALID_POWER_DESCRIPTION_STRING,
+                RegExes.POWER_DESCRIPTION_REGEX));
+
     }
 
     @Test

@@ -1,6 +1,7 @@
 package com.catalyst.superhero.controllers;
 
 import com.catalyst.superhero.entities.Power;
+import com.catalyst.superhero.exceptions.ValidationError;
 import com.catalyst.superhero.services.PowerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -30,13 +31,13 @@ public class PowerController {
     }
 
     @RequestMapping(value = "/powers", method = RequestMethod.POST)
-    public Power createPower(@RequestBody Power power) {
-        System.out.println("Running Create Controller");
+    public Power createPower(@RequestBody Power power) throws Exception{
+
         return powerService.createPower(power);
     }
 
     @RequestMapping(value = "/powers", method = RequestMethod.PUT)
-    public Power updatePower(@Validated @RequestBody Power power) {
+    public Power updatePower(@RequestBody Power power) throws Exception{
 
         return powerService.updatePower(power);
     }

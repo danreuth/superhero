@@ -19,7 +19,6 @@ public class PowerType extends BaseEntity {
     @Column(unique = true)
     @Length(min = EntityConstants.MIN_POWER_TYPE_LENGTH, max = EntityConstants.MAX_POWER_TYPE_LENGTH)
     @Pattern(regexp = RegExes.POWER_TYPE_REGEX)
-
     String powerType;
 
     public String getPowerType() {

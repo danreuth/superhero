@@ -14,7 +14,7 @@ public class PowerValidator {
    private PowerTypeValidator powerTypeValidator;
    private Power power;
 
-   PowerValidator(Power power) {
+   public PowerValidator(Power power) {
 
        this.power = power;
        validateStrings = new ValidateStrings();
@@ -28,13 +28,13 @@ public class PowerValidator {
    }
 
    private boolean validatePowerName(String powerName) {
-       return validateStrings.regexValidator(powerName, RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX) &&
+       return validateStrings.regexValidator(powerName, RegExes.POWER_NAME_REGEX) &&
                validateStrings.stringLengthLimit(powerName, EntityConstants.MIN_POWER_NAME_LENGTH,
                        EntityConstants.MAX_POWER_NAME_LENGTH);
    }
 
    private boolean validatePowerDescription(String powerDescription) {
-        return validateStrings.regexValidator(powerDescription, RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX) &&
+        return validateStrings.regexValidator(powerDescription, RegExes.POWER_DESCRIPTION_REGEX) &&
                 validateStrings.stringLengthLimit(powerDescription,EntityConstants.MIN_POWER_DESCRIPTION_LENGTH,
                 EntityConstants.MAX_POWER_DESCRIPTION_LENGTH);
    }

@@ -1,10 +1,10 @@
 package com.catalyst.superhero.services.impl;
 
 import com.catalyst.superhero.daos.PowerDao;
-import com.catalyst.superhero.daos.PowerTypeDao;
 import com.catalyst.superhero.entities.Power;
-import com.catalyst.superhero.entities.PowerType;
+import com.catalyst.superhero.exceptions.ValidationError;
 import com.catalyst.superhero.services.PowerService;
+import com.catalyst.superhero.validators.PowerValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -28,14 +28,23 @@ public class PowerServiceImpl implements PowerService {
         return powerDao.getPowers();
     }
 
-    public Power createPower(Power power) {
+    public Power createPower(Power power) throws ValidationError {
+        PowerValidator powerValidator = new PowerValidator(power);
+        if(powerValidator.validate()) {
+            return powerDao.createPower(power);
+        } else {
+            throw new ValidationError("Invalid Power Object");
+        }
 
-        return powerDao.createPower(power);
     }
 
-    public Power updatePower(Power power) {
-
-        return powerDao.updatePower(power);
+    public Power updatePower(Power power) throws ValidationError {
+        PowerValidator powerValidator = new PowerValidator(power);
+        if(powerValidator.validate()) {
+            return powerDao.updatePower(power);
+        } else {
+            throw new ValidationError("Invalid Power Object");
+        }
 
     }
 }

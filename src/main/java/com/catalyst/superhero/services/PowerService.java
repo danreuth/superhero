@@ -1,6 +1,7 @@
 package com.catalyst.superhero.services;
 
 import com.catalyst.superhero.entities.Power;
+import com.catalyst.superhero.exceptions.ValidationError;
 
 import java.util.List;
 
@@ -9,6 +10,6 @@ import java.util.List;
  */
 public interface PowerService {
     List<Power> getPowers();
-    Power createPower(Power power);
-    Power updatePower(Power power);
+    Power createPower(Power power) throws ValidationError;
+    Power updatePower(Power power) throws ValidationError;
 }
