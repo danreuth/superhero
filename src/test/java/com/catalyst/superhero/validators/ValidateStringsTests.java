@@ -15,6 +15,8 @@ public class ValidateStringsTests {
     public static final String STRING_WITH_ONLY_ALPHA_AND_NUMERIC = "This is only alpha AND 888888";
     public static final String STRING_WITH_SPECIAL_CHARACTERS = "*&#@";
     public static final String STRING_LENGTH_10 = "abcdefghij";
+    public static final String VALID_POWER_TYPE_STRING = "Movement";
+    public static final String INVALID_POWER_TYPE_STRING = "movement";
 
     public static final int ZERO = 0;
     public static final int FIVE = 5;
@@ -31,7 +33,7 @@ public class ValidateStringsTests {
     }
 
     @Test
-    public void regexValidatorHappyPath() {
+    public void regexValidatorOnlyAlphaAndNumericHappyPath() {
         assertTrue(validateStrings.regexValidator(STRING_WITH_ONLY_ALPHA_AND_NUMERIC,
                 RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX));
 
@@ -45,16 +47,16 @@ public class ValidateStringsTests {
     }
 
     @Test
-    public void onlyAlphaAndNumbericHappyPath() {
-        assertTrue(validateStrings.regexValidator(STRING_WITH_ONLY_ALPHA_AND_NUMERIC,
-                RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX));
+    public void regexValidatorPowerTypeHappyPath() {
+        assertTrue(validateStrings.regexValidator(VALID_POWER_TYPE_STRING,
+                RegExes.POWER_TYPE_REGEX));
 
     }
 
     @Test
-    public void hasSpecialCharactersFailingTest() {
-        assertFalse(validateStrings.regexValidator(STRING_WITH_SPECIAL_CHARACTERS,
-                RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX));
+    public void regexValidatorInvalidPowerType() {
+        assertFalse(validateStrings.regexValidator(INVALID_POWER_TYPE_STRING,
+                RegExes.POWER_TYPE_REGEX));
 
     }
 
