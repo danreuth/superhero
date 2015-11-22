@@ -20,15 +20,8 @@ public class PowerServiceImpl implements PowerService {
     @Autowired
     private PowerDao powerDao;
 
-    @Autowired
-    private PowerTypeDao powerTypeDao;
-
     public void setPowerDao(PowerDao powerDao) {
         this.powerDao = powerDao;
-    }
-
-    public void setPowerTypeDao(PowerTypeDao powerTypeDao) {
-        this.powerTypeDao = powerTypeDao;
     }
 
     public List<Power> getPowers() {
@@ -41,15 +34,8 @@ public class PowerServiceImpl implements PowerService {
     }
 
     public Power updatePower(Power power) {
-        System.out.println(power);
 
-        PowerType pt = powerTypeDao.findPowerTypeById(power.getPowerType().getId());
-        System.out.println(pt);
-      //  if(powerTypeDao.findPowerTypeById(power.getPowerType().getId()) != null) {
-            return powerDao.updatePower(power);
-      //  } else {
-      //      throw new DataIntegrityViolationException("Test Message");
-      //  }
+        return powerDao.updatePower(power);
 
     }
 }

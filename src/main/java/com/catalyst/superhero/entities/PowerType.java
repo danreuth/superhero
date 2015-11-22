@@ -1,5 +1,7 @@
 package com.catalyst.superhero.entities;
 
+import com.catalyst.superhero.com.catalyst.superhero.constants.entities.EntityConstants;
+import com.catalyst.superhero.constants.regexes.RegExes;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -15,8 +17,8 @@ public class PowerType extends BaseEntity {
 
     @NotNull
     @Column(unique = true)
-    @Length(min = 1, max = 100)
-    @Pattern(regexp = "^[A-Z][a-z]*")
+    @Length(min = EntityConstants.MIN_POWER_TYPE_LENGTH, max = EntityConstants.MAX_POWER_TYPE_LENGTH)
+    @Pattern(regexp = RegExes.POWER_TYPE_REGEX)
 
     String powerType;
 
