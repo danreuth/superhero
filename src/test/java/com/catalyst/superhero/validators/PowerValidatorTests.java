@@ -35,7 +35,9 @@ public class PowerValidatorTests {
     @Test
     public void validatePowerHappyPath() {
 
-        when(mockValidateStrings.regexValidator(null, RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX))
+        when(mockValidateStrings.regexValidator(null, RegExes.POWER_NAME_REGEX))
+                .thenReturn(true);
+        when(mockValidateStrings.regexValidator(null, RegExes.POWER_DESCRIPTION_REGEX))
                 .thenReturn(true);
         when(mockValidateStrings.stringLengthLimit(null, EntityConstants.MIN_POWER_NAME_LENGTH,
                 EntityConstants.MAX_POWER_NAME_LENGTH)).thenReturn(true);
