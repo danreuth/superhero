@@ -46,13 +46,15 @@ public class ValidateStringsTests {
 
     @Test
     public void onlyAlphaAndNumbericHappyPath() {
-        assertTrue(validateStrings.noSpecialCharacters(STRING_WITH_ONLY_ALPHA_AND_NUMERIC));
+        assertTrue(validateStrings.regexValidator(STRING_WITH_ONLY_ALPHA_AND_NUMERIC,
+                RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX));
 
     }
 
     @Test
     public void hasSpecialCharactersFailingTest() {
-        assertFalse(validateStrings.noSpecialCharacters(STRING_WITH_SPECIAL_CHARACTERS));
+        assertFalse(validateStrings.regexValidator(STRING_WITH_SPECIAL_CHARACTERS,
+                RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX));
 
     }
 

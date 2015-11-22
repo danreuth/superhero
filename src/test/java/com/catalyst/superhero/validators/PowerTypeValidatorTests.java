@@ -42,7 +42,7 @@ public class PowerTypeValidatorTests {
     @Test
     public void validatePowerTypeInvalidPowerType() {
 
-        when(mockValidateStrings.noSpecialCharacters(null)).thenReturn(false);
+        when(mockValidateStrings.regexValidator(null, RegExes.POWER_TYPE_REGEX)).thenReturn(false);
         when(mockValidateStrings.stringLengthLimit(null, EntityConstants.MIN_POWER_TYPE_LENGTH,
                 EntityConstants.MAX_POWER_TYPE_LENGTH)).thenReturn(true);
         assertFalse(powerTypeValidator.validate());

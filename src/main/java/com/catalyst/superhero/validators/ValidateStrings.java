@@ -10,17 +10,6 @@ import java.util.regex.Pattern;
  */
 public class ValidateStrings extends BaseValidator {
 
-    public boolean noSpecialCharacters(String input) {
-        Pattern regex = Pattern.compile(RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX);
-        Matcher matcher = regex.matcher(input);
-
-        if(matcher.find()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public boolean regexValidator(String input, String regexString) {
         Pattern regex = Pattern.compile(regexString);
         Matcher matcher = regex.matcher(input);

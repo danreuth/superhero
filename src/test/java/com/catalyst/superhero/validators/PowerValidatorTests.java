@@ -1,6 +1,7 @@
 package com.catalyst.superhero.validators;
 
 import com.catalyst.superhero.com.catalyst.superhero.constants.entities.EntityConstants;
+import com.catalyst.superhero.constants.regexes.RegExes;
 import com.catalyst.superhero.entities.Power;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,7 +35,8 @@ public class PowerValidatorTests {
     @Test
     public void validatePowerHappyPath() {
 
-        when(mockValidateStrings.noSpecialCharacters(null)).thenReturn(true);
+        when(mockValidateStrings.regexValidator(null, RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX))
+                .thenReturn(true);
         when(mockValidateStrings.stringLengthLimit(null, EntityConstants.MIN_POWER_NAME_LENGTH,
                 EntityConstants.MAX_POWER_NAME_LENGTH)).thenReturn(true);
         when(mockValidateStrings.stringLengthLimit(null, EntityConstants.MIN_POWER_DESCRIPTION_LENGTH,
@@ -47,7 +49,8 @@ public class PowerValidatorTests {
     @Test
     public void validatePowerInvalidPowerName() {
 
-        when(mockValidateStrings.noSpecialCharacters(null)).thenReturn(false);
+        when(mockValidateStrings.regexValidator(null,RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX))
+                .thenReturn(false);
         when(mockValidateStrings.stringLengthLimit(null, EntityConstants.MIN_POWER_NAME_LENGTH,
                 EntityConstants.MAX_POWER_NAME_LENGTH)).thenReturn(true);
         when(mockValidateStrings.stringLengthLimit(null, EntityConstants.MIN_POWER_DESCRIPTION_LENGTH,
@@ -60,7 +63,8 @@ public class PowerValidatorTests {
     @Test
     public void validatePowerInvalidPowerDescription() {
 
-        when(mockValidateStrings.noSpecialCharacters(null)).thenReturn(true);
+        when(mockValidateStrings.regexValidator(null, RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX))
+                .thenReturn(true);
         when(mockValidateStrings.stringLengthLimit(null, EntityConstants.MIN_POWER_NAME_LENGTH,
                 EntityConstants.MAX_POWER_NAME_LENGTH)).thenReturn(true);
         when(mockValidateStrings.stringLengthLimit(null, EntityConstants.MIN_POWER_DESCRIPTION_LENGTH,
@@ -73,7 +77,8 @@ public class PowerValidatorTests {
     @Test
     public void validatePowerInvalidPowerType() {
 
-        when(mockValidateStrings.noSpecialCharacters(null)).thenReturn(true);
+        when(mockValidateStrings.regexValidator(null, RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX))
+                .thenReturn(true);
         when(mockValidateStrings.stringLengthLimit(null, EntityConstants.MIN_POWER_NAME_LENGTH,
                 EntityConstants.MAX_POWER_NAME_LENGTH)).thenReturn(true);
         when(mockValidateStrings.stringLengthLimit(null, EntityConstants.MIN_POWER_DESCRIPTION_LENGTH,

@@ -1,6 +1,7 @@
 package com.catalyst.superhero.validators;
 
 import com.catalyst.superhero.com.catalyst.superhero.constants.entities.EntityConstants;
+import com.catalyst.superhero.constants.regexes.RegExes;
 import com.catalyst.superhero.entities.Power;
 import com.catalyst.superhero.entities.PowerType;
 
@@ -27,13 +28,13 @@ public class PowerValidator {
    }
 
    private boolean validatePowerName(String powerName) {
-       return validateStrings.noSpecialCharacters(powerName) &&
+       return validateStrings.regexValidator(powerName, RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX) &&
                validateStrings.stringLengthLimit(powerName, EntityConstants.MIN_POWER_NAME_LENGTH,
                        EntityConstants.MAX_POWER_NAME_LENGTH);
    }
 
    private boolean validatePowerDescription(String powerDescription) {
-        return validateStrings.noSpecialCharacters(powerDescription) &&
+        return validateStrings.regexValidator(powerDescription, RegExes.ONLY_ALPHA_AND_NUMERIC_REGEX) &&
                 validateStrings.stringLengthLimit(powerDescription,EntityConstants.MIN_POWER_DESCRIPTION_LENGTH,
                 EntityConstants.MAX_POWER_DESCRIPTION_LENGTH);
    }
