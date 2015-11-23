@@ -1,5 +1,6 @@
 package com.catalyst.superhero.validators;
 
+import com.catalyst.superhero.BaseTest;
 import com.catalyst.superhero.com.catalyst.superhero.constants.entities.EntityConstants;
 import com.catalyst.superhero.constants.regexes.RegExes;
 import com.catalyst.superhero.entities.Power;
@@ -14,7 +15,7 @@ import static org.mockito.Mockito.when;
 /**
  * Created by dan on 11/21/15.
  */
-public class PowerValidatorTests {
+public class PowerValidatorTests extends BaseTest {
 
     private Power powerToTest;
     private PowerValidator powerValidator;

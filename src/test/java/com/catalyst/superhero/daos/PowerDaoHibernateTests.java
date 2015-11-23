@@ -1,5 +1,6 @@
 package com.catalyst.superhero.daos;
 
+import com.catalyst.superhero.BaseTest;
 import com.catalyst.superhero.daos.hibernate.PowerDaoHibernate;
 import com.catalyst.superhero.entities.Power;
 import org.junit.Before;
@@ -16,7 +17,7 @@ import static org.mockito.Mockito.*;
 /**
  * Created by dreuther on 11/11/2015.
  */
-public class PowerDaoHibernateTests {
+public class PowerDaoHibernateTests extends BaseTest {
 
     private PowerDaoHibernate target;
 
