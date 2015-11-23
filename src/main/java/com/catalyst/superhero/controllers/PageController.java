@@ -12,6 +12,6 @@ public class PageController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home() {
-        return "home.html";
+        return "index.html";
     }
 }

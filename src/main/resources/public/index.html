@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hero App</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src = "js/app.js"></script>
+    <script src = "js/controllers/powerController.js"></script>
+    <script src = "js/factories/dataService.js"></script>
+</head>
+<body ng-app = "heroApp">
+    <div ng-controller = "PowerController">
+        <p ng-repeat="power in powers">{{power.name}} {{power.powerType.powerType}} {{power.description}}</p>
+    </div>
+</body>
+</html>
