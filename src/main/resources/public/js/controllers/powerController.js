@@ -10,7 +10,7 @@ angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'pow
         };
         $scope.addPower = function() {
             $scope.newPower.powerType = { "id":1, "powerType":"Movement"};
-            
+
             dataService.addPower($scope.newPower)
                 .then(
                     function(success) {

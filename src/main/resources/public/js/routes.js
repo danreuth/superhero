@@ -22,6 +22,17 @@ angular.module('heroApp').config(
                                 return error;
                             }
                         );
+                    },
+
+                    powerTypeData: function(dataService) {
+                        return dataService.getPowerTypes().then(
+                            function(success) {
+                                return success;
+                            },
+                            function(error) {
+                                return error;
+                            }
+                        );
                     }
                 }
             });
