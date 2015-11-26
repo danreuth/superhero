@@ -1,3 +1,16 @@
-<div ng-controller = "powerCtrl">
-    <p ng-repeat="power in powers">{{power.name}} {{power.powerType.powerType}} {{power.description}}</p>
+<div>
+    <table>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+            <tr ng-repeat="power in powers">
+                <td>{{power.name}}</td>
+                <td>{{power.description}}</td>
+                <td>{{power.powerType.powerType}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
