@@ -1,1 +1,1 @@
-angular.module('heroApp', []);
+angular.module('heroApp', ['ui.router']);

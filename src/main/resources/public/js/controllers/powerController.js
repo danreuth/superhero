@@ -1,4 +1,4 @@
-angular.module("heroApp").controller("PowerController", ["$scope", "dataService",
+angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService',
     function($scope, dataService) {
         $scope.test = "Power Screen";
         dataService.getPowers().then(
