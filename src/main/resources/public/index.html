@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <title>Hero App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src = "js/app.js"></script>
@@ -11,7 +13,12 @@
     <script src = "js/factories/dataService.js"></script>
 </head>
 <body ng-app = "heroApp">
-    Test
+    <div>
+        <ul>
+            <li><a ui-sref='teamView'>Team View</a></li>
+            <li><a ui-sref='powerView'>Power View</a></li>
+        </ul>
+    </div>
     <div ui-view></div>
 
 </body>
