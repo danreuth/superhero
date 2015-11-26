@@ -1,4 +1,5 @@
 <div>
+    <button ng-click="openAddPower()">Add Power</button>
     <table>
         <tbody>
             <tr>
@@ -13,4 +14,10 @@
             </tr>
         </tbody>
     </table>
+    <div ng-show="showAddPower">
+        <input type="text" ng-model="newPower.name" placeholder="Power Name" />
+        <input type="text" ng-model="newPower.description" placeholder="Power Description" />
+        <input type="text" ng-model="newPower.powerType" placeholder="Power Type" />
+        <button ng-click="addPower()">Save</button>
+    </div>
 </div>

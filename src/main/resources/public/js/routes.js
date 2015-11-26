@@ -11,6 +11,18 @@ angular.module('heroApp').config(
             .state('powerView', {
                 url: '/powerView',
                 templateUrl: 'templates/powerView.html',
-                controller: 'powerCtrl'
-            })
+                controller: 'powerCtrl',
+                resolve: {
+                    powerData: function(dataService) {
+                        return dataService.getPowers().then(
+                            function(success) {
+                                return success;
+                            },
+                            function(error) {
+                                return error;
+                            }
+                        );
+                    }
+                }
+            });
     });

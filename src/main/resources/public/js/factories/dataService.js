@@ -5,6 +5,10 @@ angular.module("heroApp").factory("dataService", ["$q", "$http", function($q, $h
                 method: 'GET',
                 url: '/powers'
             });
+        },
+
+        addPower: function(data) {
+            return $http.post('/powers', data);
         }
     }
 }]);
