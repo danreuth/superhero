@@ -1,12 +1,12 @@
 angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'powerData', 'powerTypeData',
     'validationValues',
     function($scope, dataService, powerData, powerTypeData, validationValues) {
-        $scope.test = "Power Screen";
-        $scope.showAddPower = false;
+
         $scope.powers = powerData.data;
         $scope.powerTypes = powerTypeData.data;
         $scope.validationValues = validationValues;
-        
+
+        $scope.showAddPower = false;
         $scope.editing = false;
 
         $scope.openAddPower = function() {
@@ -15,6 +15,7 @@ angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'pow
             $scope.newPower = {};
             $scope.newPower.powerType = $scope.powerTypes[0];
         };
+
         $scope.addPower = function() {
             var promise;
             if($scope.editing === false) {
@@ -36,7 +37,8 @@ angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'pow
                     },
                     function(error) {
                     });
-        }
+        };
+        
         $scope.editPower = function(powerToEdit) {
             $scope.editing = true;
             $scope.showAddPower = true;
