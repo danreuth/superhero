@@ -4,13 +4,13 @@ angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'pow
         $scope.showAddPower = false;
         $scope.powers = powerData.data;
         $scope.powerTypes = powerTypeData.data;
-        $scope.newPower = {};
-        $scope.newPower.powerType = {};
+
         $scope.editing = false;
 
         $scope.openAddPower = function() {
             $scope.editing = false;
             $scope.showAddPower = true;
+            $scope.newPower = {};
             $scope.newPower.powerType = $scope.powerTypes[0];
         };
         $scope.addPower = function() {
@@ -38,6 +38,6 @@ angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'pow
         $scope.editPower = function(powerToEdit) {
             $scope.editing = true;
             $scope.showAddPower = true;
-            $scope.newPower = powerToEdit;
+            angular.copy(powerToEdit, $scope.newPower);
         };
 }]);
