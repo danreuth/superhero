@@ -17,7 +17,8 @@
     <div ng-show="showAddPower">
         <input type="text" ng-model="newPower.name" placeholder="Power Name" />
         <input type="text" ng-model="newPower.description" placeholder="Power Description" />
-        <input type="text" ng-model="newPower.powerType" placeholder="Power Type" />
+        <select ng-model="powerTypes" ng-options="powerType.powerType for powerType in powerTypes track by powerType.id">
+        </select>
         <button ng-click="addPower()">Save</button>
     </div>
 </div>

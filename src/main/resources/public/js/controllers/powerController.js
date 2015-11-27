@@ -1,8 +1,10 @@
-angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'powerData',
-    function($scope, dataService, powerData) {
+angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'powerData', 'powerTypeData',
+    function($scope, dataService, powerData, powerTypeData) {
         $scope.test = "Power Screen";
         $scope.showAddPower = false;
         $scope.powers = powerData.data;
+        $scope.powerTypes = powerTypeData.data;
+        console.log($scope.powerTypes);
         $scope.newPower = {};
 
         $scope.openAddPower = function() {
