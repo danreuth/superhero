@@ -11,13 +11,14 @@
                 <td>{{power.name}}</td>
                 <td>{{power.description}}</td>
                 <td>{{power.powerType.powerType}}</td>
+                <td><button ng-click="editPower(power)">Edit</button></td>
             </tr>
         </tbody>
     </table>
     <div ng-show="showAddPower">
         <input type="text" ng-model="newPower.name" placeholder="Power Name" />
         <input type="text" ng-model="newPower.description" placeholder="Power Description" />
-        <select ng-model="newPower.powerType" ng-options="powerType.powerType for powerType in powerTypes">
+        <select ng-model="newPower.powerType" ng-options="powerType.powerType for powerType in powerTypes track by powerType.id">
         </select>
         {{newPower.powerType}}
         <button ng-click="addPower()">Save</button>

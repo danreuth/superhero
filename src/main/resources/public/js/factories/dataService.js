@@ -10,6 +10,10 @@ angular.module("heroApp").factory("dataService", ["$q", "$http", function($q, $h
 
         getPowerTypes: function() {
             return $http.get('/powerTypes');
+        },
+
+        editPower: function(data) {
+            return $http.put('/powers', data);
         }
     }
 }]);

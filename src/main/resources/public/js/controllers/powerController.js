@@ -6,13 +6,21 @@ angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'pow
         $scope.powerTypes = powerTypeData.data;
         $scope.newPower = {};
         $scope.newPower.powerType = {};
+        $scope.editing = false;
 
         $scope.openAddPower = function() {
+            $scope.editing = false;
             $scope.showAddPower = true;
             $scope.newPower.powerType = $scope.powerTypes[0];
         };
         $scope.addPower = function() {
-            dataService.addPower($scope.newPower)
+            var promise;
+            if($scope.editing === false) {
+                promise = dataService.addPower($scope.newPower);
+            } else {
+                promise = dataService.editPower($scope.newPower);
+            }
+            promise
                 .then(
                     function(success) {
                         $scope.showAddPower = false;
@@ -27,4 +35,9 @@ angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'pow
                     function(error) {
                     });
         }
+        $scope.editPower = function(powerToEdit) {
+            $scope.editing = true;
+            $scope.showAddPower = true;
+            $scope.newPower = powerToEdit;
+        };
 }]);
