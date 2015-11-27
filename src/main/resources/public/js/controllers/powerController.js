@@ -1,10 +1,12 @@
 angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'powerData', 'powerTypeData',
-    function($scope, dataService, powerData, powerTypeData) {
+    'validationValues',
+    function($scope, dataService, powerData, powerTypeData, validationValues) {
         $scope.test = "Power Screen";
         $scope.showAddPower = false;
         $scope.powers = powerData.data;
         $scope.powerTypes = powerTypeData.data;
-
+        $scope.validationValues = validationValues;
+        
         $scope.editing = false;
 
         $scope.openAddPower = function() {

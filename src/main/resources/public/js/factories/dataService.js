@@ -1,4 +1,4 @@
-angular.module("heroApp").factory("dataService", ["$q", "$http", function($q, $http) {
+angular.module('heroApp').factory('dataService', ['$q', '$http', function($q, $http) {
     return {
         getPowers: function() {
             return $http.get('/powers');

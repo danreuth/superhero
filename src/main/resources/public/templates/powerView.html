@@ -15,12 +15,27 @@
             </tr>
         </tbody>
     </table>
-    <div ng-show="showAddPower">
-        <input type="text" ng-model="newPower.name" placeholder="Power Name" />
-        <input type="text" ng-model="newPower.description" placeholder="Power Description" />
-        <select ng-model="newPower.powerType" ng-options="powerType.powerType for powerType in powerTypes track by powerType.id">
-        </select>
-        {{newPower.powerType}}
-        <button ng-click="addPower()">Save</button>
-    </div>
+    <form name="powerForm" ng-show="showAddPower" ng-submit="addPower()" novalidate>
+        <div>
+            <input type="text" name="name" ng-model="newPower.name" placeholder="Power Name" required
+                   ng-maxlength="validationValues.POWER_NAME_MAX_LENGTH"
+                   ng-pattern="validationValues.POWER_NAME_REGEX"/>
+            <p ng-show="powerForm.name.$error.maxlength">Name is too long!</p>
+            <p ng-show="powerForm.name.$error.pattern">Pattern validation failed</p>
+            <p ng-show="powerForm.name.$invalid && !powerForm.name.$pristine">Name is Required</p>
+        </div>
+        <div>
+            <input type="text" name="desc" ng-model="newPower.description" placeholder="Power Description" required
+                   ng-maxlength="validationValues.POWER_DESC_MAX_LENGTH"
+                   ng-pattern="validationValues.POWER_DESC_REGEX"/>
+            <p ng-show="powerForm.desc.$error.maxlength">Desc is too long!</p>
+            <p ng-show="powerForm.desc.$error.pattern">Desc Pattern validation failed</p>
+            <p ng-show="powerForm.desc.$invalid && !powerForm.desc.$pristine">Desc is Required</p>
+        </div>
+        <div>
+            <select ng-model="newPower.powerType" ng-options="powerType.powerType for powerType in powerTypes track by powerType.id">
+            </select>
+        </div>
+        <button type="submit" ng-disabled="powerForm.$invalid">Save</button>
+    </form>
 </div>
