@@ -4,15 +4,14 @@ angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'pow
         $scope.showAddPower = false;
         $scope.powers = powerData.data;
         $scope.powerTypes = powerTypeData.data;
-        console.log($scope.powerTypes);
         $scope.newPower = {};
+        $scope.newPower.powerType = {};
 
         $scope.openAddPower = function() {
             $scope.showAddPower = true;
+            $scope.newPower.powerType = $scope.powerTypes[0];
         };
         $scope.addPower = function() {
-            $scope.newPower.powerType = { "id":1, "powerType":"Movement"};
-
             dataService.addPower($scope.newPower)
                 .then(
                     function(success) {
@@ -27,7 +26,5 @@ angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'pow
                     },
                     function(error) {
                     });
-
-            console.log($scope.newPowerName);
         }
 }]);
