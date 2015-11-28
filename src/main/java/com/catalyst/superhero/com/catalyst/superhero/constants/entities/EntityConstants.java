@@ -13,4 +13,7 @@ public class EntityConstants {
     public static final int MIN_POWER_TYPE_LENGTH = 1;
     public static final int MAX_POWER_TYPE_LENGTH = 255;
 
+    public static final int MIN_ORIGIN_TYPE_LENGTH = 1;
+    public static final int MAX_ORIGIN_TYPE_LENGTH = 255;
+
 }

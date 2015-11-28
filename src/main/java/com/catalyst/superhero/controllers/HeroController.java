@@ -15,7 +15,7 @@ public class HeroController {
 
     @RequestMapping(value = "/heroes", method = RequestMethod.GET)
     public List<Hero> getHeroes() {
-        return heroService.getHeroes();
+        return null; //heroService.getHeroes();
     }
 
     @RequestMapping(value = "/heroes", method = RequestMethod.POST)
