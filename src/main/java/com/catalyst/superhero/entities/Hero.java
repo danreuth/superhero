@@ -1,10 +1,12 @@
 package com.catalyst.superhero.entities;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import com.catalyst.superhero.com.catalyst.superhero.constants.entities.EntityConstants;
+import com.catalyst.superhero.constants.regexes.RegExes;
+import org.hibernate.validator.constraints.Length;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 /**
@@ -14,9 +16,15 @@ import java.util.List;
 public class Hero extends BaseEntity {
 
     @NotNull
+    @Column(unique = true)
+    @Length(min = EntityConstants.MIN_HERO_NAME_LENGTH, max = EntityConstants.MAX_HERO_NAME_LENGTH)
+    @Pattern(regexp = RegExes.HERO_NAME_REGEX)
     private String heroName;
 
     @NotNull
+    @Column(unique = true)
+    @Length(min = EntityConstants.MIN_HERO_NAME_LENGTH, max = EntityConstants.MAX_HERO_NAME_LENGTH)
+    @Pattern(regexp = RegExes.HERO_NAME_REGEX)
     private String realName;
 
     @NotNull
