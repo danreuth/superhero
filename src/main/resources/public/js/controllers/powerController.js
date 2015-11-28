@@ -38,10 +38,11 @@ angular.module('heroApp').controller('powerCtrl', ['$scope', 'dataService', 'pow
                     function(error) {
                     });
         };
-        
+
         $scope.editPower = function(powerToEdit) {
             $scope.editing = true;
             $scope.showAddPower = true;
+            $scope.newPower = {};
             angular.copy(powerToEdit, $scope.newPower);
         };
 }]);

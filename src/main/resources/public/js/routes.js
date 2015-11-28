@@ -8,6 +8,11 @@ angular.module('heroApp').config(
                 templateUrl: 'templates/teamView.html',
                 controller: 'teamCtrl'
             })
+            .state('heroView', {
+                url: '/heroView',
+                templateUrl: 'templates/heroView.html',
+                controller: 'heroCtrl'
+            })
             .state('powerView', {
                 url: '/powerView',
                 templateUrl: 'templates/powerView.html',

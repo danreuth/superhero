@@ -9,15 +9,17 @@
     <script src = "js/app.js"></script>
     <script src = "js/controllers/powerController.js"></script>
     <script src = "js/controllers/teamController.js"></script>
+    <script src = "js/controllers/heroController.js"></script>
     <script src = "js/routes.js"></script>
     <script src = "js/factories/dataService.js"></script>
     <script src = "js/values/validationValues.js"></script>
 </head>
 <body ng-app = "heroApp">
     <div>
-        <ul>
-            <li><a ui-sref='teamView'>Team View</a></li>
-            <li><a ui-sref='powerView'>Power View</a></li>
+        <ul class="nav nav-pills">
+            <li><a ui-sref='teamView'>Teams</a></li>
+            <li><a ui-sref='heroView'>Heroes</a></li>
+            <li><a ui-sref='powerView'>Powers</a></li>
         </ul>
     </div>
     <div ui-view></div>
