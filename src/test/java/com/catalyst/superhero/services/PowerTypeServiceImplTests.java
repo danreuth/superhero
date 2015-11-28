@@ -26,7 +26,7 @@ public class PowerTypeServiceImplTests extends BaseTest{
     }
 
     @Test
-    public void powerServiceGetPowersHappyPath() {
+    public void powerServiceGetPowerTypesHappyPath() {
         powerTypeService.getPowerTypes();
         verify(mockPowerTypeDao, times(1)).getPowerTypes();
     }

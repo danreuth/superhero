@@ -13,6 +13,8 @@ public class BaseTest {
     public static final String INVALID_POWER_DESCRIPTION_STRING = "This is a valid string.!?,&&&&";
     public static final String VALID_POWER_NAME_STRING = "Rocket Flight 10";
     public static final String INVALID_POWER_NAME_STRING = "Rocket Flight 10*****";
+    public static final String VALID_ORIGIN_TYPE_STRING = "Mutant";
+    public static final String INVALID_ORIGIN_TYPE_STRING = "mutant";
 
     public static final int ZERO = 0;
     public static final int FIVE = 5;

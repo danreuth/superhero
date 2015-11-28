@@ -79,6 +79,20 @@ public class ValidateStringsTests extends BaseTest {
     }
 
     @Test
+    public void regexValidatorOriginTypeHappyPath() {
+        assertTrue(validateStrings.regexValidator(VALID_ORIGIN_TYPE_STRING,
+                RegExes.ORIGIN_TYPE_REGEX));
+
+    }
+
+    @Test
+    public void regexValidatorInvalidOriginType() {
+        assertFalse(validateStrings.regexValidator(INVALID_ORIGIN_TYPE_STRING,
+                RegExes.ORIGIN_TYPE_REGEX));
+
+    }
+
+    @Test
     public void stringLengthLimitHappyPath() {
         assertTrue(validateStrings.stringLengthLimit(STRING_LENGTH_10, ZERO, FIFTEEN));
 
