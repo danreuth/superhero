@@ -22,10 +22,12 @@ INSERT INTO power (description, name, powertype_id) VALUES('Hero has a bow with 
 INSERT INTO power (description, name, powertype_id) VALUES('Hero possesses superior strength', 'Strength', 2);
 
 -- Create Heroes
-INSERT INTO hero (costumeimage, height, weight, heroname, realname, origintype_id) VALUES(null, 72, 220, 'Captain America', 'Steve Rodgers', 3);
-INSERT INTO hero (costumeimage, height, weight, heroname, realname, origintype_id) VALUES(null, 70, 180, 'Hawkeye', 'Clint Barton', 5);
+INSERT INTO hero (costumeimage, height, weight, heroname, realname, origintype_id) VALUES('http://static.comicvine.com/uploads/original/11114/111145037/3671559-3364434-3106405183-capta.jpg', 72, 220, 'Captain America', 'Steve Rodgers', 3);
+INSERT INTO hero (costumeimage, height, weight, heroname, realname, origintype_id) VALUES('http://www.ign.com/static/test/topN/avengers/top-50-avengers_hawkeye.jpg', 70, 180, 'Hawkeye', 'Clint Barton', 5);
+INSERT INTO hero (costumeimage, height, weight, heroname, realname, origintype_id) VALUES('http://www.oocities.org/tweaknz24/resources/xavier/charlesxavier.jpg', 70, 160, 'Professor X', 'Charles Xavier', 1);
 
 -- Link Heroes and Powers
 INSERT INTO hero_power (hero_id, powers_id) VALUES(1,6);
 INSERT INTO hero_power (hero_id, powers_id) VALUES(1,8);
 INSERT INTO hero_power (hero_id, powers_id) VALUES(2,7);
+INSERT INTO hero_power (hero_id, powers_id) VALUES(3,5);

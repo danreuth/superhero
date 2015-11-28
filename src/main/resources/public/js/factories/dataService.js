@@ -14,6 +14,10 @@ angular.module('heroApp').factory('dataService', ['$q', '$http', function($q, $h
 
         editPower: function(data) {
             return $http.put('/powers', data);
+        },
+
+        getHeroes: function(data) {
+            return $http.get('/heroes');
         }
     }
 }]);

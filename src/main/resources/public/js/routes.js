@@ -11,7 +11,19 @@ angular.module('heroApp').config(
             .state('heroView', {
                 url: '/heroView',
                 templateUrl: 'templates/heroView.html',
-                controller: 'heroCtrl'
+                controller: 'heroCtrl',
+                resolve: {
+                    heroData: function(dataService) {
+                        return dataService.getHeroes().then(
+                            function(success) {
+                                return success;
+                            },
+                            function(error) {
+                                return error;
+                            }
+                        );
+                    }
+                }
             })
             .state('powerView', {
                 url: '/powerView',
