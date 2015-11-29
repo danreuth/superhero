@@ -10,4 +10,5 @@ public class RegExes {
     public static final String POWER_NAME_REGEX = "^[A-Za-z0-9 ]+$";
     public static final String POWER_DESCRIPTION_REGEX = "^[A-Za-z0-9.!,? ]+$";
     public static final String HERO_NAME_REGEX = "^[A-Z][A-za-z ]*$";
+    public static final String URL_REGEX = "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$";
 }

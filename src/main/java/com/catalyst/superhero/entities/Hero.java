@@ -16,13 +16,11 @@ import java.util.List;
 public class Hero extends BaseEntity {
 
     @NotNull
-    @Column(unique = true)
     @Length(min = EntityConstants.MIN_HERO_NAME_LENGTH, max = EntityConstants.MAX_HERO_NAME_LENGTH)
     @Pattern(regexp = RegExes.HERO_NAME_REGEX)
     private String heroName;
 
     @NotNull
-    @Column(unique = true)
     @Length(min = EntityConstants.MIN_HERO_NAME_LENGTH, max = EntityConstants.MAX_HERO_NAME_LENGTH)
     @Pattern(regexp = RegExes.HERO_NAME_REGEX)
     private String realName;

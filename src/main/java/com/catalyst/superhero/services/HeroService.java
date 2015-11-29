@@ -1,6 +1,7 @@
 package com.catalyst.superhero.services;
 
 import com.catalyst.superhero.entities.Hero;
+import com.catalyst.superhero.exceptions.ValidationError;
 
 import java.util.List;
 
@@ -9,4 +10,5 @@ import java.util.List;
  */
 public interface HeroService {
     List<Hero> getHeroes();
+    Hero createHero(Hero hero) throws ValidationError;
 }

@@ -1,5 +1,6 @@
 package com.catalyst.superhero.controllers;
 
+
 import com.catalyst.superhero.entities.Hero;
 import com.catalyst.superhero.services.HeroService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,8 @@ public class HeroController {
     }
 
     @RequestMapping(value = "/heroes", method = RequestMethod.POST)
-    public Hero createHero(@RequestBody Hero hero) {
-        return null;
+    public Hero createHero(@RequestBody Hero hero) throws Exception{
+        return heroService.createHero(hero);
     }
 
     @RequestMapping(value = "/heroes", method = RequestMethod.PUT)

@@ -27,4 +27,8 @@ public class HeroDaoHibernate implements HeroDao {
         return em.createQuery("SELECT h FROM Hero h", Hero.class).
                 getResultList();
     }
+
+    public Hero createHero(Hero hero) {
+        return em.merge(hero);
+    }
 }

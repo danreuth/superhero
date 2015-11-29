@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface HeroDao {
     List<Hero> getHeroes();
+    Hero createHero(Hero hero);
 }

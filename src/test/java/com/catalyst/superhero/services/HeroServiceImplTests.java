@@ -26,7 +26,7 @@ public class HeroServiceImplTests extends BaseTest {
     }
 
     @Test
-    public void heroServiceGetHerossHappyPath() {
+    public void heroServiceGetHeroesHappyPath() {
         heroService.getHeroes();
         verify(mockHeroDao, times(1)).getHeroes();
     }
