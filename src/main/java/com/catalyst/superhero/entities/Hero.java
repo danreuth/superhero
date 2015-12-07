@@ -1,6 +1,6 @@
 package com.catalyst.superhero.entities;
 
-import com.catalyst.superhero.com.catalyst.superhero.constants.entities.EntityConstants;
+import com.catalyst.superhero.constants.entities.EntityConstants;
 import com.catalyst.superhero.constants.regexes.RegExes;
 import org.hibernate.validator.constraints.Length;
 

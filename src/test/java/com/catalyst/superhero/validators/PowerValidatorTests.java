@@ -1,7 +1,7 @@
 package com.catalyst.superhero.validators;
 
 import com.catalyst.superhero.BaseTest;
-import com.catalyst.superhero.com.catalyst.superhero.constants.entities.EntityConstants;
+import com.catalyst.superhero.constants.entities.EntityConstants;
 import com.catalyst.superhero.constants.regexes.RegExes;
 import com.catalyst.superhero.entities.Power;
 import org.junit.Before;

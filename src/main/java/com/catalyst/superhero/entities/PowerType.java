@@ -1,13 +1,12 @@
 package com.catalyst.superhero.entities;
 
-import com.catalyst.superhero.com.catalyst.superhero.constants.entities.EntityConstants;
+import com.catalyst.superhero.constants.entities.EntityConstants;
 import com.catalyst.superhero.constants.regexes.RegExes;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import java.util.List;
 
 /**
  * Created by dReuther on 11/7/2015.

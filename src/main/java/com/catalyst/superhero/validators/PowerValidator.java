@@ -1,9 +1,8 @@
 package com.catalyst.superhero.validators;
 
-import com.catalyst.superhero.com.catalyst.superhero.constants.entities.EntityConstants;
+import com.catalyst.superhero.constants.entities.EntityConstants;
 import com.catalyst.superhero.constants.regexes.RegExes;
 import com.catalyst.superhero.entities.Power;
-import com.catalyst.superhero.entities.PowerType;
 
 /**
  * Created by dan on 11/21/15.

@@ -1,4 +1,4 @@
-package com.catalyst.superhero.com.catalyst.superhero.constants.entities;
+package com.catalyst.superhero.constants.entities;
 
 /**
  * Created by dan on 11/21/15.
