@@ -25,11 +25,11 @@ public class BaseSeleniumTest {
 
     @Test
     public void getTitle() {
-        driver.get("http://github.com");
+        driver.get("localhost:8080");
+        
+        String actualTitle = driver.getTitle();
 
-        String actualTitle =driver.getTitle();
-
-        assertEquals("GitHub · Where software is built", actualTitle);
+        assertEquals("Hero App", actualTitle);
     }
 
     @After
